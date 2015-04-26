@@ -1,5 +1,5 @@
-class PrimeMultiplier
-  def self.print_multiplication_table numbers
+class PrimeNumbersMultiplicationTable
+  def self.generate numbers
     puts <<multiplication_table
   | 2   3   5   7
 --+----------------
@@ -13,9 +13,23 @@ class PrimeMultiplier
 multiplication_table
   end
 end
-describe PrimeMultiplier do
+describe PrimeNumbersMultiplicationTable do
 
-  it 'generates multiplication table of first n prime numbers' do
+  it 'generates multiplication table of first 2 prime numbers' do
+
+    expected_table = <<multiplication_table
+  | 2   3
+--+--------
+2 | 4   6
+  |
+3 | 6   9
+multiplication_table
+
+    expect{PrimeNumbersMultiplicationTable.generate(2)}.to output(expected_table).to_stdout
+
+  end
+
+  it 'generates multiplication table of first 4 prime numbers' do
 
     expected_table = <<multiplication_table
   | 2   3   5   7
@@ -29,7 +43,7 @@ describe PrimeMultiplier do
 7 | 14  21  35  49
 multiplication_table
 
-    expect{PrimeMultiplier.print_multiplication_table(4)}.to output(expected_table).to_stdout
+    expect{PrimeNumbersMultiplicationTable.generate(4)}.to output(expected_table).to_stdout
 
   end
 
