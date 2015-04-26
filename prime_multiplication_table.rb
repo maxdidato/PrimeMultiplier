@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
-
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'lib/prime_numbers_generator'
+require 'lib/multiplication_table'
 puts <<multiplication_table
   | 2   3   5   7
 --+----------------
