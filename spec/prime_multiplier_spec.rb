@@ -18,7 +18,7 @@ multiplication_table
 
     expected_table = <<multiplication_table
   | 2    3    5    7
---+------------------
+--+-----------------
 2 | 4    6    10   14
   |
 3 | 6    9    15   21
@@ -27,6 +27,7 @@ multiplication_table
   |
 7 | 14   21   35   49
 multiplication_table
+    system("#{ROOT_PATH}/prime_multiplication_table.rb 4")
     expect{system("#{ROOT_PATH}/prime_multiplication_table.rb 4")}.to output(expected_table).to_stdout_from_any_process
 
   end
