@@ -4,7 +4,7 @@ PrimeMultiplier is a command line application to generate a multiplication table
 
 Requisites
 ======
-ClickIt uses Ruby 2.2.0
+PrimeMultiplier uses Ruby 2.2.0
 
 Installation
 ======
