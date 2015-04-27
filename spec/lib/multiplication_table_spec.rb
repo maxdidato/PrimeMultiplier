@@ -32,7 +32,7 @@ describe MultiplicationTable do
 
     context 'when an object different from array is passed as argument' do
       it 'raises an exception' do
-        expect { MultiplicationTable.generate(1) }.to raise_error('Only array are accepted')
+        expect { MultiplicationTable.generate(1) }.to raise_error('Only arrays are accepted')
       end
     end
 
