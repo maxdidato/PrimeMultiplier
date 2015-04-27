@@ -27,10 +27,10 @@ multiplication_table
   |
 7 | 14   21   35   49
 multiplication_table
-    system("#{ROOT_PATH}/prime_multiplication_table.rb 4")
     expect{system("#{ROOT_PATH}/prime_multiplication_table.rb 4")}.to output(expected_table).to_stdout_from_any_process
 
   end
+
 
 end
 
