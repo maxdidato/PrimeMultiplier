@@ -1,6 +1,23 @@
 require 'spec_helper'
 describe 'prime_multiplier_table' do
 
+  context 'when executed with parameter different from --count' do
+    it 'generates an error' do
+         expect { system("#{ROOT_PATH}/prime_multiplication_table.rb --option 2") }.to output("Unrecognised parameter\n").to_stdout_from_any_process
+    end
+  end
+
+  context 'when executed with count not integer' do
+    it 'generates an error' do
+      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb --count count") }.to output("Input must be positive integer\n").to_stdout_from_any_process
+    end
+  end
+  context 'when executed with count not positive integer' do
+    it 'generates an error' do
+      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb --count -22") }.to output("Input must be positive integer\n").to_stdout_from_any_process
+    end
+  end
+
   context 'when executed with --count 2' do
     it 'generates multiplication table of first 2 prime numbers' do
 
@@ -11,7 +28,7 @@ describe 'prime_multiplier_table' do
   |
 3 | 6   9
 multiplication_table
-      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb 2") }.to output(expected_table).to_stdout_from_any_process
+      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb --count 2") }.to output(expected_table).to_stdout_from_any_process
 
     end
   end
@@ -42,7 +59,7 @@ multiplication_table
    |
 29 | 58    87    145   203   319   377   493   551   667   841
 multiplication_table
-      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb 10") }.to output(expected_table).to_stdout_from_any_process
+      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb --count 10") }.to output(expected_table).to_stdout_from_any_process
 
     end
 
@@ -78,7 +95,7 @@ multiplication_table
    |
 31 | 62    93    155   217   341   403   527   589   713   899   961
 multiplication_table
-      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb 11") }.to output(expected_table).to_stdout_from_any_process
+      expect { system("#{ROOT_PATH}/prime_multiplication_table.rb --count 11") }.to output(expected_table).to_stdout_from_any_process
 
     end
 
