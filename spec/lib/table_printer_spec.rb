@@ -83,7 +83,6 @@ formatted_table
 formatted_table
 
         subject.add_header([2, 3, 5])
-        subject.draw
         expect { subject.draw }.to output(expected_output).to_stdout
       end
     end
@@ -103,7 +102,6 @@ formatted_table
 5 | 7      8      9
 formatted_table
         subject.add_header([2, 3, 5])
-        subject.draw
         expect { subject.draw }.to output(expected_output).to_stdout
       end
 
@@ -123,7 +121,6 @@ formatted_table
 50000 | 7       8       9
 formatted_table
         subject.add_header([20000, 30000, 50000])
-        subject.draw
         expect { subject.draw }.to output(expected_output).to_stdout
       end
 
