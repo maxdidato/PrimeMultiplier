@@ -5,7 +5,7 @@ class PrimeNumbersGenerator
     primes_found=[]
     to_be_checked = 2
     until primes_found.size == prime_numbers
-      unless (2..to_be_checked-1).map { |j| to_be_checked % j }.include?(0)
+     if (2...to_be_checked).each {|j| false;break if to_be_checked % j == 0}
         primes_found << to_be_checked
       end
       to_be_checked += 1
