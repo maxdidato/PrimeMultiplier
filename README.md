@@ -25,7 +25,7 @@ To run all the specs type
     $(PROJECT_DIR)/prime_multiplication_table --count 10
 
 Output example
-======
+------------
 $(PROJECT_DIR)/prime_multiplication_table --count 10
 
    | 2     3     5     7     11    13    17    19    23    29
