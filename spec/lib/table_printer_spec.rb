@@ -2,6 +2,31 @@ require 'spec_helper'
 
 describe TablePrinter do
 
+  context '#initialize' do
+
+    context 'when a flat array is passed' do
+
+      it 'raises an error' do
+        expect{TablePrinter.new [1,2,3]}.to raise_error('Invalid Input, an array containing at least an array of numbers is required')
+      end
+    end
+
+    context 'when non an array is passed' do
+
+      it 'raises an error' do
+        expect{TablePrinter.new(1)}.to raise_error('Invalid Input, an array containing at least an array of numbers is required')
+      end
+    end
+
+    context 'when an array of non integer arrays is passed' do
+      it 'raises an error' do
+        expect{TablePrinter.new([[1,1.5,2]])}.to raise_error('Invalid Input, an array containing at least an array of numbers is required')
+      end
+
+    end
+
+  end
+
   context '#draw' do
 
     context 'when an array of arrays is passed as parameter' do

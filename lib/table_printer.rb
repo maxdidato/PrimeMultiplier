@@ -1,9 +1,21 @@
 class TablePrinter
 
   TAB_PADDING = 3
+  ERROR_MESSAGE='Invalid Input, an array containing at least an array of numbers is required'
 
   def initialize data
+    validate(data)
     @data = data
+  end
+
+  def validate data
+   raise Exception.new(ERROR_MESSAGE) unless data.is_a?(Array)
+    data.each do |array|
+      raise Exception.new(ERROR_MESSAGE) unless array.is_a?(Array)
+      array.each do |element|
+        raise Exception.new(ERROR_MESSAGE) unless element.is_a?(Integer)
+      end
+    end
   end
 
   def add_header header
